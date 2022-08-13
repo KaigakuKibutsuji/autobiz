@@ -30,7 +30,7 @@ if enable_autoupdate then
         if autoupdate_loaded then
             Update.json_url = "https://raw.githubusercontent.com/KaigakuKibutsuji/autobiz/main/autobiz.json?" .. tostring(os.clock())
             Update.prefix = "[" .. string.upper(thisScript().name) .. "]: "
-            Update.url = "https://github.com/qrlk/moonloader-script-updater/"
+            Update.url = "https://raw.githubusercontent.com/KaigakuKibutsuji/autobiz/main/bizlog.lua"
         end
     end
 end
@@ -52,7 +52,6 @@ function main()
         wait(100)
     end
 
-    -- вырежи тут, если хочешь отключить проверку обновлений
     if autoupdate_loaded and enable_autoupdate and Update then
         pcall(Update.check, Update.json_url, Update.prefix, Update.url)
     end
